@@ -182,18 +182,6 @@ console.log("EXERCISE 5 \n");
 function onlyLetters(str) {
   let noNumbers = str.replace(/[0-9]/g, "");
   return noNumbers;
-  //   console.log(noNumbers);
-  //   noNumbers = noNumbers.split(" ");
-  //   console.log(noNumbers);
-
-  //   for (let i = 0; i < noNumbers.length; i++) {
-  //     if (noNumbers[i] === " ") {
-  //       let string = noNumbers[i].remove();
-  //       console.log(` ${string[i]}`);
-  //     } else {
-  //     }
-  //     console.log(noNumbers.join(" "));
-  //   }
 }
 
 let crazyDeleteNumber;
@@ -227,8 +215,18 @@ Write a function called whatDayIsIt that should return the current day of the we
 */
 console.log("EXERCISE 7 \n");
 function whatDayIsIt() {
-  let dayOfWeekName = new Date().toLocaleString("default", { weekday: "long" });
-  return dayOfWeekName;
+  let dayOfWeekName = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thusday",
+    "Friday",
+    "Saturday",
+  ];
+  //   let dayOfWeekName = new Date().toLocaleString("default", { weekday: "long" });
+  let day = new Date().getDay();
+  return dayOfWeekName[day];
 }
 
 let currentDay;
@@ -256,9 +254,14 @@ values: [3, 3, 4]
 */
 console.log("EXERCISE 8 \n");
 function rollTheDices(x) {
+  let sum = 0;
+  let diceArray = [];
   for (let i = 0; i < x; i++) {
-    return `Iteration is #${i}`;
+    let randomNumber = dice();
+    sum += randomNumber;
+    diceArray.push(randomNumber);
   }
+  return `${sum} - ${diceArray}`;
 }
 
 let diceNumber = rollTheDices(5);
@@ -325,7 +328,7 @@ Write a function called deleteProp which receives an object and a string as para
 and returns the given object after deleting its property named as the given string.
 
 */
-console.log("EXERCISE 9 \n");
+console.log("EXERCISE 11 \n");
 function deleteProp(object, str) {
   let keys = Object.keys(object);
   console.log(keys);
