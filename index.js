@@ -331,6 +331,7 @@ function deleteProp(object, str) {
   console.log(keys);
   for (let i = 0; i < keys.length; i++) {
     if (str == keys[i]) {
+      let data = keys[i];
       console.log("match: ", keys[i]);
     }
   }
