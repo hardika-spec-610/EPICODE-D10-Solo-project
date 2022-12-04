@@ -270,19 +270,20 @@ const loopTime = 5;
 
 /* EXERCISE 9
 
-Write a function called howManyDays which receives a date as a parameter and returns the number of days passed since that date.
+Write a function called howManyDays which receives a date as a parameter and returns the number 
+of days passed since that date.
 
 */
 console.log("EXERCISE 9 \n");
-function howManyDays(x) {
-  let day = Math.floor(new Date() - x) / (1000 * 3600 * 24);
-
-  return day;
+function howManyDays(date) {
+  let current = new Date(date.getTime());
+  console.log("current", current);
+  let previous = new Date(date.getFullYear(), 0, 1); // getFullYear() and "0"---> means january and "1" --> means day 1
+  console.log("previous", previous);
+  return Math.ceil((current - previous + 1) / 86400000);
 }
-// let date = new Date().toLocaleDateString("de-DE");
 
-let numOfDay = howManyDays(new Date(2022, 12, 02));
-console.log(numOfDay, "\n");
+console.log(howManyDays(new Date(2022, 12, 31)));
 
 /* EXERCISE 10
 
